@@ -1,6 +1,6 @@
 import React from "react";
 import { useCallback, useRef } from "react";
-import Particles from "react-tsparticles";
+import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
