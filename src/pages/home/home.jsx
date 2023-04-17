@@ -10,6 +10,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { ParallaxBannerLayer } from "react-scroll-parallax";
 import College from "../../assets/college4.JPG";
 import { Flip } from "react-reveal";
+import Gif from "../../assets/code.gif"
 
 export default function Home(props) {
   const particlesInit = useCallback(async (engine) => {
@@ -317,7 +318,7 @@ export default function Home(props) {
       </div>
       <div className="w-full h-[600px]">
         <ParallaxBanner style={{ height: "600px" }}>
-          <div className="absolute z-10 flex justify-center m-auto border w-full h-full">
+          <div className="absolute z-10 flex justify-center m-auto  w-full h-full">
             <Zoom>
               <div className="my-auto flex text-white font-Jost text-[100px]">
                 Made with &#160;
@@ -339,7 +340,12 @@ export default function Home(props) {
         </ParallaxBanner>
       </div>
       <div className="h-[600px] bg-black w-full  flex">
-        <div className="w-[50%] flex h-full ml-auto border my-auto">
+        <div className="text-white w-[50%] flex my-auto">
+          <div className=" h-[70%] w-[70%] m-auto flex ">
+            <img src={Gif}/>
+          </div>
+        </div>
+        <div className="w-[50%] flex h-full ml-auto  my-auto">
           <div className="m-auto">
             <Fade left>
               <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text h-[20.3%]  m-auto flex mx-auto justify-center ">
@@ -347,12 +353,12 @@ export default function Home(props) {
               </div>
             </Fade>
             <Fade left>
-              <div className="text-white h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent ">
+              <div className=" h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent ">
                 <div className="my-auto font-Jost text-[100px]">Code</div>
               </div>
             </Fade>
             <Fade left>
-              <div className="text-white h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
+              <div className=" h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent">
                 <div className="my-auto font-Jost text-[100px]">Deploy</div>
               </div>
             </Fade>
