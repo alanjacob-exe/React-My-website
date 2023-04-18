@@ -371,7 +371,7 @@ export default function Home(props) {
         >
           <div className="absolute z-10 flex justify-center m-auto visibility:hidden  w-full h-full">
             <Zoom>
-              <div className="my-auto visibility:hidden flex flex-col text-blue-200 font-Jost text-[50px] ">
+              <div className="my-auto visibility:hidden flex flex-col text-white font-Jost text-[50px] ">
                 Made with &#160;
                 <Flip delay={200} left>
                   <div
