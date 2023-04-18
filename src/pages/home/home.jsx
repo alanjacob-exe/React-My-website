@@ -1,16 +1,18 @@
 import React from "react";
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal";
 import { ParallaxBanner } from "react-scroll-parallax";
-// import { useParallax } from "react-scroll-parallax";
 import { ParallaxBannerLayer } from "react-scroll-parallax";
 import College from "../../assets/college4.JPG";
 import { Flip } from "react-reveal";
-import Gif from "../../assets/code.gif"
+import Gif from "../../assets/code.gif";
+import { Button } from "flowbite-react";
+import { HiArrowRight } from "react-icons/hi2";
+import parallaxImage from "../../assets/parallax.png"
 
 export default function Home(props) {
   const particlesInit = useCallback(async (engine) => {
@@ -52,11 +54,11 @@ export default function Home(props) {
   };
 
   return (
-    <div>
-      <div className="w-full min-h-screen bg-white ">
+    <div className="">
+      <div className="min-w-screen flex relative min-h-screen bg-black  lg:max-w-screen ">
         <Particles
-          className="h-full w-full absolute  justify-center z-1"
-          height="100vh"
+          className="h-full w-full absolute  justify-center z-1 "
+          height="100%"
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
@@ -291,24 +293,44 @@ export default function Home(props) {
             themes: [],
           }}
         />{" "}
-        <div className="z-10 text-xl h-screen  w-full flex-col flex absolute ">
+        <div className="z-10 text-xl h-screen lg:h-screen  w-full flex-col flex absolute overflow-hidden">
           <div className="h-[10%]  w-full flex">
-            <div className="w-[10%] flex my-auto  text-xl font-Jost text-white">
+            <div className="w-[30%] h-full flex my-auto  text-xl font-Jost text-white">
               <Slide duration={1000} left>
-                <div className="mx-auto text-3xl"> Alan</div>
+                <div className="mx-auto text-4xl mt-5"> Alan</div>
               </Slide>{" "}
             </div>
           </div>
-          <div className="w-full h-full">
-            <div className="w-[80%] flex  h-full mx-auto">
-              <div className="h-[40%] w-full flex  mt-[12%]">
-                <Zoom duration={1000}>
-                  <div
-                    className="m-auto font-Jost text-white text-[140px]"
-                    onMouseEnter={(event) => onMouseOver(event)}
-                    onMouseOut={(event) => onMouseOut(event)}
-                  >
-                    React Developer
+          <div className="w-full h-full    lg:h-full">
+            <div className="w-full flex h-[80%] m-auto lg:h-full mx-auto">
+              <div className="h-[90%] w-full my-auto flex">
+                <Zoom duration={1500}>
+                  <div className="m-auto font-Jost text-white   lg:text-[140px]">
+                    <div
+                      className="text-[70px] lg:text-[140px] mb-10"
+                      onMouseEnter={(event) => onMouseOver(event)}
+                      onMouseOut={(event) => onMouseOut(event)}
+                    >
+                      React
+                    </div>
+                    <div
+                      className="text-[70px] lg:mt-[15%] lg:text-[140px]"
+                      onMouseEnter={(event) => onMouseOver(event)}
+                      onMouseOut={(event) => onMouseOut(event)}
+                    >
+                      Developer
+                    </div>
+                    <div className="bg-inherit">
+                      <Button
+                        pill={true}
+                        size={"xl"}
+                        className="bg-inherit mt-[15%] lg:mt-[10%]"
+                        gradientDuoTone="cyanToBlue"
+                      >
+                        About Me
+                        <HiArrowRight className="h-6 w-6 ml-2" />
+                      </Button>
+                    </div>
                   </div>
                 </Zoom>
               </div>
@@ -316,15 +338,18 @@ export default function Home(props) {
           </div>
         </div>
       </div>
-      <div className="w-full h-[600px]">
-        <ParallaxBanner style={{ height: "600px" }}>
-          <div className="absolute z-10 flex justify-center m-auto  w-full h-full">
+      <div className="lg:w-full lg:h-[600px] hidden lg:flex">
+        <ParallaxBanner
+          className="visibility:hidden"
+          style={{ height: "600px" }}
+        >
+          <div className="absolute z-10 flex justify-center m-auto visibility:hidden  w-full h-full">
             <Zoom>
-              <div className="my-auto flex text-white font-Jost text-[100px]">
-                Made with &#160;
+              <div className="my-auto visibility:hidden flex-col flex text-white font-Jost text-[50px] lg:text-[100px]">
+                Made with
                 <Flip delay={200} left>
                   <div
-                    className="flex"
+                    className="flex mx-auto"
                     onMouseEnter={(event) => onMouseOver(event)}
                     onMouseOut={(event) => onMouseOut(event)}
                   >
@@ -339,27 +364,59 @@ export default function Home(props) {
           </ParallaxBannerLayer>
         </ParallaxBanner>
       </div>
-      <div className="h-[600px] bg-black w-full  flex">
-        <div className="text-white w-[50%] flex my-auto">
-          <div className=" h-[70%] w-[70%] m-auto flex ">
-            <img src={Gif}/>
+      <div className="lg:w-full lg:h-[600px] lg:hidden  h-[600px] ">
+        <ParallaxBanner
+          className="visibility:hidden"
+          style={{ height: "600px" }}
+        >
+          <div className="absolute z-10 flex justify-center m-auto visibility:hidden  w-full h-full">
+            <Zoom>
+              <div className="my-auto visibility:hidden flex flex-col text-blue-200 font-Jost text-[50px] ">
+                Made with &#160;
+                <Flip delay={200} left>
+                  <div
+                    className="flex "
+                    onMouseEnter={(event) => onMouseOver(event)}
+                    onMouseOut={(event) => onMouseOut(event)}
+                  >
+                    IHRD
+                  </div>
+                </Flip>
+              </div>
+            </Zoom>
+          </div>
+          <ParallaxBannerLayer speed={-15}>
+            <img src={parallaxImage} className="w-full" alt="Sahara Desert landscape" loading="lazy" />
+          </ParallaxBannerLayer>
+        </ParallaxBanner>
+      </div>
+      <div className="h-full bg-black w-full  flex flex-col lg:flex-row">
+        <div className="text-white w-full flex my-auto lg:w-[50%]">
+          <div className=" lg:h-[70%] lg:w-[70%] m-auto flex ">
+            <img src={Gif} alt="My College mates" />
           </div>
         </div>
-        <div className="w-[50%] flex h-full ml-auto  my-auto">
+        <div className="w-full flex h-full lg:ml-auto lg:w-[50%]  my-auto">
           <div className="m-auto">
             <Fade left>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text h-[20.3%]  m-auto flex mx-auto justify-center ">
-                <div className="my-auto font-Jost text-[100px]">Design</div>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text lg:h-[20.3%]  m-auto flex mx-auto justify-center ">
+                <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
+                  Design
+                </div>
               </div>
             </Fade>
             <Fade left>
-              <div className=" h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent ">
-                <div className="my-auto font-Jost text-[100px]">Code</div>
+              <div className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#C6EA8D] to-[#FE90AF] bg-clip-text text-transparent ">
+                <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
+                  Code
+                </div>
               </div>
             </Fade>
             <Fade left>
-              <div className=" h-[20.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent">
-                <div className="my-auto font-Jost text-[100px]">Deploy</div>
+              <div className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#D38312] to-[#A83279] bg-clip-text text-transparent">
+                <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
+                  Deploy
+                </div>
               </div>
             </Fade>
           </div>
