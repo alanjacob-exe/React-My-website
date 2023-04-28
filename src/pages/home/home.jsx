@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
@@ -12,9 +12,17 @@ import { Flip } from "react-reveal";
 import Gif from "../../assets/code.gif";
 import { Button } from "flowbite-react";
 import { HiArrowRight } from "react-icons/hi2";
-import parallaxImage from "../../assets/parallax.png"
+import designGif from "../../assets/Gifs/design.gif";
+import codeGif from "../../assets/Gifs/job.gif";
+import deployGif from "../../assets/Gifs/tick.gif";
 
+import parallaxImage from "../../assets/parallax.png";
 export default function Home(props) {
+  const [currentGif, setcurrentGif] = useState(Gif);
+  const [currentStyle, setcurrentStyle] = useState(
+    "h-full bg-black w-full  flex flex-col lg:flex-row"
+  );
+  const Source1 = require("../../assets/college4.JPG");
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -360,11 +368,19 @@ export default function Home(props) {
             </Zoom>
           </div>
           <ParallaxBannerLayer speed={-15}>
-            <img src={College} alt="Sahara Desert landscape" loading="lazy" />
+            <img
+              src={require("../../assets/college4.JPG")}
+              alt="Sahara Desert landscape"
+              loading="lazy"
+            />
           </ParallaxBannerLayer>
         </ParallaxBanner>
       </div>
+
       <div className="lg:w-full lg:h-[600px] lg:hidden  h-[600px] ">
+        {" "}
+        /////////////////////////////////////////////////// Mobile parallax
+        ///////////////////////////////////
         <ParallaxBanner
           className="visibility:hidden"
           style={{ height: "600px" }}
@@ -372,7 +388,7 @@ export default function Home(props) {
           <div className="absolute z-10 flex justify-center m-auto visibility:hidden  w-full h-full">
             <Zoom>
               <div className="my-auto visibility:hidden flex flex-col text-white font-Jost text-[50px] ">
-                Made with &#160;
+                Carved By &#160;
                 <Flip delay={200} left>
                   <div
                     className="flex "
@@ -386,34 +402,63 @@ export default function Home(props) {
             </Zoom>
           </div>
           <ParallaxBannerLayer speed={-15}>
-            <img src={parallaxImage} className="w-full" alt="Sahara Desert landscape" loading="lazy" />
+            <img
+              src={College}
+              className="w-full"
+              alt="Sahara Desert landscape"
+              loading="lazy"
+            />
           </ParallaxBannerLayer>
         </ParallaxBanner>
       </div>
-      <div className="h-full bg-black w-full  flex flex-col lg:flex-row">
+      <div className={currentStyle}>
         <div className="text-white w-full flex my-auto lg:w-[50%]">
           <div className=" lg:h-[70%] lg:w-[70%] m-auto flex ">
-            <img src={Gif} alt="My College mates" />
+            <img src={currentGif} style={{transition:"0.3s"}}alt="My College mates" />
           </div>
         </div>
         <div className="w-full flex h-full lg:ml-auto lg:w-[50%]  my-auto">
           <div className="m-auto">
-            <Fade left>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text lg:h-[20.3%]  m-auto flex mx-auto justify-center ">
+            <Fade left onc>
+              <div
+                className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text lg:h-[20.3%]  m-auto flex mx-auto justify-center "
+                onMouseOver={() => {
+                  setcurrentStyle(
+                    "h-full bg-[#ffb565] w-full  flex flex-col lg:flex-row transition duration-200 "
+                  );
+                  setcurrentGif(designGif);
+                }}
+              >
                 <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
                   Design
                 </div>
               </div>
             </Fade>
             <Fade left>
-              <div className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#C6EA8D] to-[#FE90AF] bg-clip-text text-transparent ">
+              <div
+                className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#C6EA8D] to-[#FE90AF] bg-clip-text text-transparent "
+                onMouseOver={() => {
+                  setcurrentStyle(
+                    "h-full bg-[#1e1842] w-full  flex flex-col lg:flex-row transition duration-200 "
+                  );
+                  setcurrentGif(codeGif);
+                }}
+              >
                 <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
                   Code
                 </div>
               </div>
             </Fade>
             <Fade left>
-              <div className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#D38312] to-[#A83279] bg-clip-text text-transparent">
+              <div
+                className=" h-[15.3%]  m-auto flex mx-auto justify-center bg-gradient-to-r from-[#D38312] to-[#A83279] bg-clip-text text-transparent"
+                onMouseOver={() => {
+                  setcurrentStyle(
+                    "h-full bg-[#ffff] w-full  flex flex-col lg:flex-row transition duration-200 "
+                  );
+                  setcurrentGif(deployGif);
+                }}
+              >
                 <div className="my-auto font-Jost text-[5rem] lg:text-[100px]">
                   Deploy
                 </div>
