@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
+import "./home.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal";
@@ -15,12 +16,13 @@ import { HiArrowRight } from "react-icons/hi2";
 import designGif from "../../assets/Gifs/design.gif";
 import codeGif from "../../assets/Gifs/job.gif";
 import deployGif from "../../assets/Gifs/tick.gif";
+import photo from "../../assets/alan2.jpg";
 
 import parallaxImage from "../../assets/parallax.png";
 export default function Home(props) {
   const [currentGif, setcurrentGif] = useState(Gif);
   const [currentStyle, setcurrentStyle] = useState(
-    "h-full bg-black w-full  flex flex-col lg:flex-row"
+    "h-full bg-black w-full overflow-hidden flex flex-col lg:flex-row"
   );
   const Source1 = require("../../assets/college4.JPG");
   const particlesInit = useCallback(async (engine) => {
@@ -302,10 +304,10 @@ export default function Home(props) {
           }}
         />{" "}
         <div className="z-10 text-xl h-screen lg:h-screen  w-full flex-col flex absolute overflow-hidden">
-          <div className="h-[10%]  w-full flex">
+          <div className="h-[10%]   w-full flex">
             <div className="w-[30%] h-full flex my-auto  text-xl font-Jost text-white">
               <Slide duration={1000} left>
-                <div className="mx-auto text-4xl mt-5"> Alan</div>
+                <div className="mx-auto my-auto flex  text-4xl "> Alan</div>
               </Slide>{" "}
             </div>
           </div>
@@ -378,9 +380,7 @@ export default function Home(props) {
       </div>
 
       <div className="lg:w-full lg:h-[600px] lg:hidden  h-[600px] ">
-        {" "}
-        /////////////////////////////////////////////////// Mobile parallax
-        ///////////////////////////////////
+        
         <ParallaxBanner
           className="visibility:hidden"
           style={{ height: "600px" }}
@@ -403,7 +403,7 @@ export default function Home(props) {
           </div>
           <ParallaxBannerLayer speed={-15}>
             <img
-              src={College}
+              src={parallaxImage}
               className="w-full"
               alt="Sahara Desert landscape"
               loading="lazy"
@@ -414,7 +414,11 @@ export default function Home(props) {
       <div className={currentStyle}>
         <div className="text-white w-full flex my-auto lg:w-[50%]">
           <div className=" lg:h-[70%] lg:w-[70%] m-auto flex ">
-            <img src={currentGif} style={{transition:"0.3s"}}alt="My College mates" />
+            <img
+              src={currentGif}
+              style={{ transition: "0.3s" }}
+              alt="My College mates"
+            />
           </div>
         </div>
         <div className="w-full flex h-full lg:ml-auto lg:w-[50%]  my-auto">
@@ -466,6 +470,163 @@ export default function Home(props) {
             </Fade>
           </div>
         </div>
+      </div>
+      <div className="lg:h-[100vh] h-[1400px] w-full 	overflow-hidden bg-black">
+        <div className="text-white absolute z-10">
+          <div className="w-[100vw] h-[100vh] mx-auto  flex">
+            <div className="m-auto w-[80vw] h-[1350px] mt-15 flex lg:h-[80vh] rounded-xl glass">
+              <div className="flex lg:h-full  flex-col lg:flex-row ">
+                <div className="w-[100%] lg:w-[40%] inline-block mb-4  lg:border-r-2 lg:h-[100%]">
+                  <div className="flex h-full w-full ">
+                    <div className="m-auto ">
+                      {" "}
+                      <div className="bm-pl ">
+                        <div className="z-10 w-full h-[50%] lg:h-full absolute">
+                          <div className=" flex h-full w-full">
+                            <div className="m-auto flex ">
+                              <img
+                              className="m-auto mt-12 lg:mt-0"
+                                style={{ borderRadius: "50%" }}
+                                src={photo}
+                                width={250}
+                                height={250}
+                              />
+                            </div>
+                          </div>{" "}
+                        </div>
+                        <div className="bm-pl__blob bm-pl__blob--r"></div>
+                        <div className="bm-pl__blob bm-pl__blob--g"></div>
+                        <div className="bm-pl__blob bm-pl__blob--b"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:w-[60%] w-full  h-full">
+                  <div className="flex w-[60%] -b-2 mx-auto h-[10%]">
+                    <div className="m-auto font-Jost text-2xl  lg:text-4xl ">
+                      About Me
+                    </div>
+                  </div>
+                  {/* bg-[#46dace] */}
+                  <div className="flex flex-col mx-auto w-[90%] h-[90%]">
+                    <div className="glass2 flex rounded-xl  h-[15%]">
+                      <div className="text-black font-semibold font-Jost mx-3 my-auto text-2xl text-center lg:text-[41px] rounded-xl">
+                        React developer based in India
+                      </div>
+                    </div>
+                    <div className="w-full text-black h-full mb-4 rounded-xl glass2 mt-4">
+                      <div
+                        className="lg:text-xl text-lg font-Jost font-semibold mt-8 mx-4">
+                        Heyy,I'm Alan</div>
+                      <div className="text-xl text-black font-Jost font-semibold mx-4 mt-2">
+                        Hello and welcome to my website!
+                        I am a graduate and a React developer who's creating
+                        responsive and user-friendly web applications for the
+                        past 1 year. I have a passion for building elegant and
+                        efficient solutions that enhance user experience and
+                        solve real-world problems. Throughout my career, I have
+                        developed custom applications and integrated APIs to
+                        deliver high-quality products. My expertise in React,
+                        Redux, JavaScript Tailwind CSS, and other front-end
+                        technologies has enabled me to create dynamic and
+                        scalable web applications that are both visually
+                        appealing and functional. 
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between mb-10 mt-3">
+          <div className="blob-1"></div>
+          <div className="blob-2"></div>
+          <div className="blob-3"></div>
+          <div className="blob-4"></div>
+          <div className="blob-5"></div>
+          <div className="blob-6"></div>
+          <div className="blob-7"></div>
+          <div className="blob-8"></div>
+          <div className="blob-9"></div>
+          <div className="blob-10"></div>
+        </div>
+        <div className="flex justify-between mb-10">
+          <div className="blob-3"></div>
+          <div className="blob-2"></div>
+          <div className="blob-1"></div>
+
+          <div className="blob-5"></div>
+          <div className="blob-4"></div>
+
+          <div className="blob-6"></div>
+          <div className="blob-8"></div>
+          <div className="blob-7"></div>
+
+          <div className="blob-10"></div>
+          <div className="blob-9"></div>
+        </div>
+        <div className="flex justify-between mb-10">
+          <div className="blob-4"></div>
+          <div className="blob-8"></div>
+
+          <div className="blob-7"></div>
+          <div className="blob-2"></div>
+          <div className="blob-3"></div>
+          <div className="blob-6"></div>
+          <div className="blob-9"></div>
+          <div className="blob-10"></div>
+
+          <div className="blob-1"></div>
+          <div className="blob-5"></div>
+        </div>
+        <div className="flex justify-between mb-10">
+          <div className="blob-8"></div>
+
+          <div className="blob-2"></div>
+          <div className="blob-1"></div>
+
+          <div className="blob-6"></div>
+          <div className="blob-7"></div>
+          <div className="blob-4"></div>
+
+          <div className="blob-5"></div>
+
+          <div className="blob-9"></div>
+          <div className="blob-3"></div>
+
+          <div className="blob-10"></div>
+        </div>
+        <div className="flex justify-between mb-10">
+          <div className="blob-10"></div>
+          <div className="blob-5"></div>
+
+          <div className="blob-1"></div>
+          <div className="blob-2"></div>
+          <div className="blob-4"></div>
+          <div className="blob-6"></div>
+          <div className="blob-8"></div>
+
+          <div className="blob-7"></div>
+          <div className="blob-9"></div>
+          <div className="blob-3"></div>
+        </div>
+        <div className="flex justify-between mb-10">
+          <div className="blob-1"></div>
+          <div className="blob-10"></div>
+          <div className="blob-4"></div>
+          <div className="blob-7"></div>
+
+          <div className="blob-2"></div>
+          <div className="blob-3"></div>
+          <div className="blob-6"></div>
+          <div className="blob-8"></div>
+          <div className="blob-9"></div>
+          <div className="blob-5"></div>
+        </div>
+
+        {/* <div className="w-full h-[10%] flex-col">Education</div> */}
       </div>
     </div>
   );

@@ -10,6 +10,13 @@ module.exports = {
       fontFamily: {
         Jost: ["Jost", "sans-serif"],
       },
+      colors: {
+        primary: "#101727",
+        secondary:"#9FA4AA",
+        success:  "#13ad2d",
+        error: "#ad0505",
+        disabled: "#E4E7EC",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],
